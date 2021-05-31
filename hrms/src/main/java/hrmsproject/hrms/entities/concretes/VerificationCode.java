@@ -1,5 +1,7 @@
 package hrmsproject.hrms.entities.concretes;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,16 +25,20 @@ public class VerificationCode {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "code")
+	@Column(name = "verification_code")
 	private String code;
 	
-	@Column(name = "is_verified")
-	private boolean isVerified;
+	@Column(name = "confirm_date")
+	private Date confirmDate;
 	
 	@Column(name = "user_id")
 	private int userId;
 	
-	public boolean isVerified() {
+	@Column(name= "is_verify")
+	private boolean isVerified;
+	
+	public boolean isVerify() {
 		return this.isVerified;
 	}
+	
 }

@@ -1,5 +1,6 @@
 package hrmsproject.hrms.entities.concretes;
 
+
 import java.sql.Date;
 
 import javax.persistence.Column;
@@ -17,18 +18,22 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@PrimaryKeyJoinColumn(name="id")
+@PrimaryKeyJoinColumn(name = "user_id")
 @Table(name = "candidates")
 public class Candidate extends User {
+	
 	
 	@Column(name = "first_name")
 	private String firstName;
 	
+	
 	@Column(name = "last_name")
 	private String lastName;
 	
+	
 	@Column(name = "identity_number")
 	private String idendityNumber;
+	
 	
 	@Column(name = "birth_date")
 	private Date birthDate;

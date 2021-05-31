@@ -76,11 +76,7 @@ public class CandidateManager implements CandidateService {
 		User savedUser = this.userService.add(candidate);
 		this.verificationCodeService.generatedCode(new VerificationCode(),savedUser.getId());
 		return new SuccessDataResult<Candidate>(this.candidateDao.save(candidate),"İş Arayan Hesabı Eklendi , Doğrulama Kodu Gönderildi:"+candidate.getId());
-		
-
-
-		
-		
+			
 		
 		
 	}
@@ -104,6 +100,7 @@ public class CandidateManager implements CandidateService {
 			return false;
 		}
 		return true;
+			
 	}
 	
 	private boolean emailNullChecker(Candidate candidate) {
@@ -131,8 +128,7 @@ public class CandidateManager implements CandidateService {
 	     
 	}
 	
-
-
+	
 	@Override
 	public DataResult<List<Candidate>> getAll() {
 		return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"İş Arayanlar Listesi başarıyla getirildi.");
