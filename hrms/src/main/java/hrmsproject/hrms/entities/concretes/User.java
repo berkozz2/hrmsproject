@@ -29,8 +29,8 @@ public class User {
 	@Column(name="id")
 	private int id;
 	
-	@Email
-	@NotBlank
+	@Email(message = "Email kurallarına uyunuz.")
+	@NotBlank(message = "Email boş bırakalamaz.")
 	@NotNull
 	@Column(name="email_address")
 	private String email;
