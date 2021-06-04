@@ -2,11 +2,17 @@ package hrmsproject.hrms.entities.concretes;
 
 
 import java.sql.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,4 +43,32 @@ public class Candidate extends User {
 	
 	@Column(name = "birth_date")
 	private Date birthDate;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "Candidate")
+	private List<CandidateExperience> experiences;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "Candidate")
+	private List<CandidateLanguage> languages;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "Candidate")
+	private List<CandidateEducation> educations;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "Candidate")
+	private List<LetterOfApproval> letters;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "Candidate")
+	private List<CandidateLink> links;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "Candidate")
+	private List<CandidateAbility> abilities;
+	
+	@JsonIgnore
+	@OneToOne(mappedBy = "Candidate",optional = false,fetch =FetchType.LAZY)
+	private List<Image> images;
 }
