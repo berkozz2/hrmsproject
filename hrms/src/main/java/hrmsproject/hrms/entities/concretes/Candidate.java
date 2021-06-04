@@ -45,30 +45,30 @@ public class Candidate extends User {
 	private Date birthDate;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "Candidate")
+	@OneToMany(mappedBy = "candidate")
 	private List<CandidateExperience> experiences;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "Candidate")
+	@OneToMany(mappedBy = "candidate")
 	private List<CandidateLanguage> languages;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "Candidate")
+	@OneToMany(mappedBy = "candidate")
 	private List<CandidateEducation> educations;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "Candidate")
+	@OneToMany(mappedBy = "candidate")
 	private List<LetterOfApproval> letters;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "Candidate")
+	@OneToMany(mappedBy = "candidate")
 	private List<CandidateLink> links;
 	
 	@JsonIgnore
-	@OneToMany(mappedBy = "Candidate")
+	@OneToMany(mappedBy = "candidate")
 	private List<CandidateAbility> abilities;
 	
 	@JsonIgnore
-	@OneToOne(mappedBy = "Candidate",optional = false,fetch =FetchType.LAZY)
-	private List<Image> images;
+	@OneToOne(mappedBy = "candidate")
+	private Image image;
 }

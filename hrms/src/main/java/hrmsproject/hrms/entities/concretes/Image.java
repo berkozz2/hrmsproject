@@ -1,5 +1,7 @@
 package hrmsproject.hrms.entities.concretes;
 
+import java.time.LocalDate;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -30,6 +32,10 @@ public class Image{
 	@NotNull
 	@Column(name = "url_address")
 	private String urlAddress;
+	
+	@NotNull
+	@Column(name = "update_date")
+	private LocalDate updateDate;
 	
 	@OneToOne(optional = false, fetch =FetchType.LAZY)
 	@JoinColumn(name = "candidate_id", referencedColumnName = "user_id")
