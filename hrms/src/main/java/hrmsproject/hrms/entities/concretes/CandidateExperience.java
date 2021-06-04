@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,15 +29,18 @@ public class CandidateExperience{
 	private int id;
 	
 	@Column(name = "started_date")
+	@NotNull
 	private LocalDate startedDate;
 	
 	@Column(name = "ended_date")
 	private LocalDate endedDate;
 	
 	@Column(name = "company_name")
+	@NotNull
 	private String companyName;
 	
 	@Column(name = "position")
+	@NotNull
 	private String position;
 	
 	@ManyToOne

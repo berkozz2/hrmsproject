@@ -9,6 +9,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -29,6 +30,7 @@ public class LetterOfApproval{
 	private int id;
 	
 	@NotBlank(message = "Onay yazısı Boş olamaz.")
+	@NotNull
 	@Column(name = "text")
 	private String text;
 	

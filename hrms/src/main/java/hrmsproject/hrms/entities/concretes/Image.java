@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,6 +27,7 @@ public class Image{
 	@Column(name = "id")
 	private int id;
 	
+	@NotNull
 	@Column(name = "url_address")
 	private String urlAddress;
 	
