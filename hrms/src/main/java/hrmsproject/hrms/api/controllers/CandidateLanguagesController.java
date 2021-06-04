@@ -5,7 +5,6 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,35 +17,34 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import hrmsproject.hrms.business.abstracts.CandidateEducationService;
+import hrmsproject.hrms.business.abstracts.CandidateLanguageService;
 import hrmsproject.hrms.core.utilities.results.ErrorDataResult;
-import hrmsproject.hrms.entities.concretes.CandidateEducation;
+import hrmsproject.hrms.entities.concretes.CandidateLanguage;
 
 @RestController
-@RequestMapping(value = "/api/candidateeducations")
-public class CandidateEducationsController {
+@RequestMapping(value = "/api/candidatelanguages")
+public class CandidateLanguagesController {
 	
-	private CandidateEducationService candidateEducationService;
-	
-	@Autowired
-	public CandidateEducationsController(CandidateEducationService candidateEducationService) {
+	private CandidateLanguageService candidateLanguageService;
+
+	public CandidateLanguagesController(CandidateLanguageService candidateLanguageService) {
 		super();
-		this.candidateEducationService = candidateEducationService;
+		this.candidateLanguageService = candidateLanguageService;
 	}
 	
 	@PostMapping(value = "/add")
-	public ResponseEntity<?> add(@Valid @RequestBody CandidateEducation candidateEducation){
-		return ResponseEntity.ok(this.candidateEducationService.add(candidateEducation));
+	public ResponseEntity<?> add(@Valid @RequestBody CandidateLanguage candidateLanguage){
+		return ResponseEntity.ok(this.candidateLanguageService.add(candidateLanguage));
 	}
 	
 	@GetMapping(value = "/getall")
 	public ResponseEntity<?> getAll(){
-		return ResponseEntity.ok(this.candidateEducationService.getAll());
+		return ResponseEntity.ok(this.candidateLanguageService.getAll());
 	}
 	
 	@GetMapping(value = "/getByCandidate")
 	public ResponseEntity<?> getByCandidate(int candidateId){
-		return ResponseEntity.ok(this.candidateEducationService.getByCandidate(candidateId));
+		return ResponseEntity.ok(this.candidateLanguageService.getByCandidate(candidateId));
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)
