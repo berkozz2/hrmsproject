@@ -9,4 +9,5 @@ public interface CandidateService {
 	DataResult<Candidate> add(Candidate candidate);
 	
 	DataResult<List<Candidate>>getAll();
+
 }
