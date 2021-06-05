@@ -28,4 +28,5 @@ public class CurriculumVitaeDto {
 	private List<LetterOfApproval> letters;
 	private List<CandidateExperience> experiences;
 	
+	
 }
