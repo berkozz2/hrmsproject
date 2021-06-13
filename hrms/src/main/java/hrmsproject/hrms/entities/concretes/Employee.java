@@ -28,7 +28,7 @@ public class Employee extends User{
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@OneToMany(mappedBy = "job_advertisement_confirms")
+	@OneToMany(mappedBy = "jobAdvertisement")
 	@JsonIgnore
 	private JobAdvertisementConfirm jobAdvertisementConfirm;
 }
