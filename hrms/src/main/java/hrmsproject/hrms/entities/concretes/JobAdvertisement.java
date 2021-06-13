@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -73,4 +74,13 @@ public class JobAdvertisement {
 	@ManyToOne
 	@JoinColumn(name = "work_time_id")
 	private WorkTime workTime;
+	
+	@ManyToOne
+	@JoinColumn(name="work_type_id")
+	private WorkType workType;
+	
+	@OneToOne(mappedBy = "JobAdvertisement")
+	private JobAdvertisementConfirm jobAdvertisementConfirm;
+	
+	
 }

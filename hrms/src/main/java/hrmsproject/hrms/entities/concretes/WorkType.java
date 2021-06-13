@@ -18,19 +18,17 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name ="work_times")
-public class WorkTime {
+@Table(name="work_types")
+public class WorkType {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id")
+	@Column(name ="id")
 	private int id;
 	
-	@Column(name="name")
-	private String name;
+	@Column(name="type_name")
+	private String typeName;
 	
-	@OneToMany(mappedBy = "WorkTime")
+	@OneToMany(mappedBy = "WorkType")
 	private List<JobAdvertisement> jobAdvertisement;
-	
-	
 }
