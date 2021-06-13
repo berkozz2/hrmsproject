@@ -133,7 +133,7 @@ public class CandidateManager implements CandidateService {
 	public DataResult<List<Candidate>> getAll() {
 		return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"İş Arayanlar Listesi başarıyla getirildi.");
 	}
-	
+
 	
 	
 	

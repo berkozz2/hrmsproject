@@ -2,7 +2,7 @@ package hrmsproject.hrms.api.controllers;
 
 import java.util.List;
 
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +15,7 @@ import hrmsproject.hrms.entities.concretes.Candidate;
 
 @RestController
 @RequestMapping("/api/candidates")
+@CrossOrigin
 public class CandidatesController {
 	private CandidateService candidateService;
 
@@ -32,4 +33,5 @@ public class CandidatesController {
 	public DataResult<Candidate> add(@RequestBody Candidate candidate){
 		return this.candidateService.add(candidate);
 	}
+	
 }
