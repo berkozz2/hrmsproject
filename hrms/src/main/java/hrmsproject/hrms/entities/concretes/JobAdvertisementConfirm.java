@@ -29,7 +29,8 @@ public class JobAdvertisementConfirm {
 	@Column(name = "is_verified")
 	private boolean isVerified;
 	
-	@OneToOne
+
+	@OneToOne()
 	@JoinColumn(name="job_advertisement_id")
 	private JobAdvertisement jobAdvertisement;
 	

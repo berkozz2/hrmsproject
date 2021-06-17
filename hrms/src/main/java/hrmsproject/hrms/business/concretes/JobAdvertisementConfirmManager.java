@@ -35,6 +35,8 @@ public class JobAdvertisementConfirmManager implements JobAdvertisementConfirmSe
 	public DataResult<JobAdvertisementConfirm> getByJobAdvertisementConfirmId(int jobAdvertisementId) {
 		
 		return new SuccessDataResult<JobAdvertisementConfirm>(this.jobAdvertisementConfirmDao.getByJobAdvertisement_Id(jobAdvertisementId));
+		
+
 	}
 
 

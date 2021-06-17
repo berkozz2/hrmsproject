@@ -2,7 +2,9 @@ package hrmsproject.hrms.entities.dtos;
 
 import java.util.List;
 
+
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 
 import hrmsproject.hrms.entities.concretes.Candidate;
 import hrmsproject.hrms.entities.concretes.CandidateAbility;
@@ -11,6 +13,9 @@ import hrmsproject.hrms.entities.concretes.CandidateExperience;
 import hrmsproject.hrms.entities.concretes.CandidateLanguage;
 import hrmsproject.hrms.entities.concretes.CandidateLink;
 import hrmsproject.hrms.entities.concretes.Image;
+
+import hrmsproject.hrms.entities.concretes.LetterOfApproval;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -19,7 +24,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 @JsonSerialize
+
+
 public class CurriculumVitaeDto {
 	private Candidate candidate;
 	private Image image;
@@ -28,5 +36,7 @@ public class CurriculumVitaeDto {
 	private List<CandidateAbility> abilities;
 	private List<CandidateEducation> educations;
 	private List<CandidateExperience> experiences;
+	private List<LetterOfApproval> letters;
 	
+
 }

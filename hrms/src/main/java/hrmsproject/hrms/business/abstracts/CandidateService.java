@@ -13,4 +13,5 @@ public interface CandidateService {
 	
 	DataResult<CurriculumVitaeDto> getByCurriculumVitaeDtoId(int id);
 
+
 }

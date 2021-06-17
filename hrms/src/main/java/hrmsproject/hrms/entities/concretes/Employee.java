@@ -30,7 +30,13 @@ public class Employee extends User{
 	@Column(name = "last_name")
 	private String lastName;
 	
+
 	@OneToMany(mappedBy = "employee")
 	@JsonIgnore
 	private List<JobAdvertisementConfirm> jobAdvertisementConfirms;
+
+	@OneToMany(mappedBy = "jobAdvertisement")
+	@JsonIgnore
+	private JobAdvertisementConfirm jobAdvertisementConfirm;
+
 }

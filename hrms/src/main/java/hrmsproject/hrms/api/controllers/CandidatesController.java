@@ -36,9 +36,11 @@ public class CandidatesController {
 		return this.candidateService.add(candidate);
 	}
 	
+
 	@GetMapping(value = "/curriculum")
 	public DataResult<CurriculumVitaeDto> getCurriculumVitae(@RequestParam int id){
 		return this.candidateService.getByCurriculumVitaeDtoId(id);
 	}
 	
+
 }

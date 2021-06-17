@@ -36,4 +36,5 @@ public class WorkTimeManager implements WorkTimeService {
 		return new SuccessDataResult<List<WorkTime>>(this.workTimeDao.getByJobAdvertisementId(id));
 	}
 
+
 }
