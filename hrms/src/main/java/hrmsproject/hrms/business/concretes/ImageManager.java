@@ -56,9 +56,9 @@ public class ImageManager implements ImageService {
 	}
 
 	@Override
-	public DataResult<Image> getByCandidate(int candidateId) {
+	public DataResult<Image> getByCandidate_Id(int candidateId) {
 		
-		return new SuccessDataResult<Image>(this.imageDao.getByCandidate(candidateId));
+		return new SuccessDataResult<Image>(this.imageDao.getByCandidate_Id(candidateId));
 	}
 	
 }

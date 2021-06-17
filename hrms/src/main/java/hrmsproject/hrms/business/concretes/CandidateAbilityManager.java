@@ -2,6 +2,7 @@ package hrmsproject.hrms.business.concretes;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import hrmsproject.hrms.business.abstracts.CandidateAbilityService;
@@ -17,6 +18,7 @@ public class CandidateAbilityManager implements CandidateAbilityService {
 
 	private CandidateAbilityDao candidateAbilityDao;
 	
+	@Autowired
 	public CandidateAbilityManager(CandidateAbilityDao candidateAbilityDao) {
 		super();
 		this.candidateAbilityDao = candidateAbilityDao;
@@ -34,8 +36,8 @@ public class CandidateAbilityManager implements CandidateAbilityService {
 	}
 
 	@Override
-	public DataResult<List<CandidateAbility>> getByCandidate(int candidateId) {
-		return new SuccessDataResult<List<CandidateAbility>>(this.candidateAbilityDao.getByCandidate(candidateId));
+	public DataResult<List<CandidateAbility>> getByCandidateId(int candidateId) {
+		return new SuccessDataResult<List<CandidateAbility>>(this.candidateAbilityDao.getByCandidate_Id(candidateId));
 	}
 
 }

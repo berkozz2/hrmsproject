@@ -7,4 +7,6 @@ import hrmsproject.hrms.entities.concretes.WorkType;
 
 public interface WorkTypeService {
 	DataResult<List<WorkType>> getAll();
+	
+	DataResult<List<WorkType>> getByJobAdverId(int id);
 }

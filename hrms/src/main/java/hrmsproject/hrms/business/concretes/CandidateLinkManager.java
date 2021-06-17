@@ -37,8 +37,8 @@ public class CandidateLinkManager implements CandidateLinkService {
 	}
 
 	@Override
-	public DataResult<List<CandidateLink>> getByCandidate(int candidateId) {
-		return new SuccessDataResult<List<CandidateLink>>(this.candidateLinkDao.getByCandidate(candidateId));
+	public DataResult<List<CandidateLink>> getByCandidate_Id(int candidateId) {
+		return new SuccessDataResult<List<CandidateLink>>(this.candidateLinkDao.getByCandidate_Id(candidateId));
 	}
 
 }

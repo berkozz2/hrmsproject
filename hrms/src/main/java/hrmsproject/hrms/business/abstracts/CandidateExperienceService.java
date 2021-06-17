@@ -11,5 +11,5 @@ public interface CandidateExperienceService {
 	
 	DataResult<List<CandidateExperience>> getAll();
 	
-	DataResult<List<CandidateExperience>> getByCandidate(int candidateId);
+	DataResult<List<CandidateExperience>> getByCandidate_Id(int candidateId);
 }

@@ -8,5 +8,5 @@ import hrmsproject.hrms.entities.concretes.CandidateExperience;
 
 public interface CandidateExperienceDao extends JpaRepository<CandidateExperience, Integer> {
 	
-	List<CandidateExperience> getByCandidate(int candidateId);
+	List<CandidateExperience> getByCandidate_Id(int id);
 }

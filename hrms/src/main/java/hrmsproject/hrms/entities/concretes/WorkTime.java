@@ -29,7 +29,7 @@ public class WorkTime {
 	@Column(name="name")
 	private String name;
 	
-	@OneToMany(mappedBy = "WorkTime")
+	@OneToMany(mappedBy = "workTime")
 	private List<JobAdvertisement> jobAdvertisement;
 	
 	

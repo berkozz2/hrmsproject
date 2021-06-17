@@ -44,7 +44,7 @@ public class CandidateExperiencesController {
 	
 	@GetMapping(value = "/getByCandidate")
 	public ResponseEntity<?> getByCandidate(int candidateId){
-		return ResponseEntity.ok(this.candidateExperienceService.getByCandidate(candidateId));
+		return ResponseEntity.ok(this.candidateExperienceService.getByCandidate_Id(candidateId));
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)

@@ -29,4 +29,11 @@ public class WorkTypeManager implements WorkTypeService {
 		return new SuccessDataResult<List<WorkType>>(this.workTypeDao.findAll(),"Çalışma Tipleri Listelendi.");
 	}
 
+
+	@Override
+	public DataResult<List<WorkType>> getByJobAdverId(int id) {
+		
+		return new SuccessDataResult<List<WorkType>>(this.workTypeDao.getByJobAdvertisementsId(id));
+	}
+
 }

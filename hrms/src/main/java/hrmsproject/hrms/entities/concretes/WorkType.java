@@ -29,6 +29,6 @@ public class WorkType {
 	@Column(name="type_name")
 	private String typeName;
 	
-	@OneToMany(mappedBy = "WorkType")
-	private List<JobAdvertisement> jobAdvertisement;
+	@OneToMany(mappedBy = "workType")
+	private List<JobAdvertisement> jobAdvertisements;
 }

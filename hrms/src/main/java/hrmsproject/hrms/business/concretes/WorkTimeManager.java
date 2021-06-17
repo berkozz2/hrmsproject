@@ -29,4 +29,11 @@ public class WorkTimeManager implements WorkTimeService {
 		return new SuccessDataResult<List<WorkTime>>(this.workTimeDao.findAll(),"Çalışma Saatleri Listelendi.");
 	}
 
+
+	@Override
+	public DataResult<List<WorkTime>> getByJobAdverId(int id) {
+		
+		return new SuccessDataResult<List<WorkTime>>(this.workTimeDao.getByJobAdvertisementId(id));
+	}
+
 }

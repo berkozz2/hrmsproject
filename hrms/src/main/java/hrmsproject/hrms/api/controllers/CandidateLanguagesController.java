@@ -44,7 +44,7 @@ public class CandidateLanguagesController {
 	
 	@GetMapping(value = "/getByCandidate")
 	public ResponseEntity<?> getByCandidate(int candidateId){
-		return ResponseEntity.ok(this.candidateLanguageService.getByCandidate(candidateId));
+		return ResponseEntity.ok(this.candidateLanguageService.getByCandidate_Id(candidateId));
 	}
 	
 	@ExceptionHandler(MethodArgumentNotValidException.class)

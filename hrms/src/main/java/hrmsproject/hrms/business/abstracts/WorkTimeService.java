@@ -7,4 +7,6 @@ import hrmsproject.hrms.entities.concretes.WorkTime;
 
 public interface WorkTimeService {
 	DataResult<List<WorkTime>> getAll();
+	
+	DataResult<List<WorkTime>> getByJobAdverId(int id);
 }

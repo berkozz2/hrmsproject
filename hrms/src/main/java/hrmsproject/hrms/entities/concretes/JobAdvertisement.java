@@ -79,7 +79,7 @@ public class JobAdvertisement {
 	@JoinColumn(name="work_type_id")
 	private WorkType workType;
 	
-	@OneToOne(mappedBy = "JobAdvertisement")
+	@OneToOne(mappedBy = "jobAdvertisement")
 	private JobAdvertisementConfirm jobAdvertisementConfirm;
 	
 	

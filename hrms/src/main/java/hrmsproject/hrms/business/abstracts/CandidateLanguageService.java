@@ -11,5 +11,5 @@ public interface CandidateLanguageService {
 	
 	DataResult<List<CandidateLanguage>> getAll();
 	
-	DataResult<List<CandidateLanguage>> getByCandidate(int candidateId);
+	DataResult<List<CandidateLanguage>> getByCandidate_Id(int candidateId);
 }

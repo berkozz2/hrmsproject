@@ -36,8 +36,8 @@ public class CandidateEducationManager implements CandidateEducationService{
 	}
 
 	@Override
-	public DataResult<List<CandidateEducation>> getByCandidate(int candidateId) {
-		return new SuccessDataResult<List<CandidateEducation>>(this.candidateEducationDao.getByCandidate(candidateId));
+	public DataResult<List<CandidateEducation>> getByCandidate_Id(int id) {
+		return new SuccessDataResult<List<CandidateEducation>>(this.candidateEducationDao.getByCandidate_Id(id));
 	}
 
 }

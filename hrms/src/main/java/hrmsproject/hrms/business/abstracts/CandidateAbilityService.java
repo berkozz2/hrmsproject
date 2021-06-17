@@ -11,5 +11,5 @@ public interface CandidateAbilityService {
 	Result add(CandidateAbility candidateAbility);
 	
 	DataResult<List<CandidateAbility>> getAll();
-	DataResult<List<CandidateAbility>> getByCandidate(int candidateId);
+	DataResult<List<CandidateAbility>> getByCandidateId(int candidateId);
 }

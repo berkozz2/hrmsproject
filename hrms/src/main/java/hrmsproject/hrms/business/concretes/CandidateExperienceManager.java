@@ -36,8 +36,8 @@ public class CandidateExperienceManager implements CandidateExperienceService{
 	}
 
 	@Override
-	public DataResult<List<CandidateExperience>> getByCandidate(int candidateId) {
-		return new SuccessDataResult<List<CandidateExperience>>(this.candidateExperienceDao.getByCandidate(candidateId));
+	public DataResult<List<CandidateExperience>> getByCandidate_Id(int candidateId) {
+		return new SuccessDataResult<List<CandidateExperience>>(this.candidateExperienceDao.getByCandidate_Id(candidateId));
 	}
 
 }

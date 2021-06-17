@@ -7,7 +7,15 @@ import java.util.regex.Pattern;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+
+
+import hrmsproject.hrms.business.abstracts.CandidateAbilityService;
+import hrmsproject.hrms.business.abstracts.CandidateEducationService;
+import hrmsproject.hrms.business.abstracts.CandidateExperienceService;
+import hrmsproject.hrms.business.abstracts.CandidateLanguageService;
+import hrmsproject.hrms.business.abstracts.CandidateLinkService;
 import hrmsproject.hrms.business.abstracts.CandidateService;
+import hrmsproject.hrms.business.abstracts.ImageService;
 import hrmsproject.hrms.business.abstracts.UserService;
 import hrmsproject.hrms.business.abstracts.VerificationCodeService;
 import hrmsproject.hrms.core.utilities.results.DataResult;
@@ -18,23 +26,45 @@ import hrmsproject.hrms.dataAccess.abstracts.CandidateDao;
 import hrmsproject.hrms.entities.concretes.Candidate;
 import hrmsproject.hrms.entities.concretes.User;
 import hrmsproject.hrms.entities.concretes.VerificationCode;
+import hrmsproject.hrms.entities.dtos.CurriculumVitaeDto;
 
 @Service
 public class CandidateManager implements CandidateService {
 
-	@Autowired
+	
 	private CandidateDao candidateDao;
 	private VerificationCodeService verificationCodeService;
 	private UserService userService;
+	private CandidateLanguageService candidateLanguageService;
+	private CandidateExperienceService candidateExperienceService;
+	private CandidateAbilityService candidateAbilityService;
+	private CandidateEducationService candidateEducationService;
+	private CandidateLinkService candidateLinkService;
+	private ImageService imageService;
+	
 	
 
-	public CandidateManager(CandidateDao candidateDao,VerificationCodeService verificationCodeService,UserService userService) {
+	@Autowired
+	public CandidateManager(CandidateDao candidateDao, VerificationCodeService verificationCodeService,
+			UserService userService, CandidateLanguageService candidateLanguageService,
+			CandidateExperienceService candidateExperienceService, CandidateAbilityService candidateAbilityService,
+			CandidateEducationService candidateEducationService, CandidateLinkService candidateLinkService,
+			ImageService imageService) {
 		super();
 		this.candidateDao = candidateDao;
 		this.verificationCodeService = verificationCodeService;
 		this.userService = userService;
+		this.candidateLanguageService = candidateLanguageService;
+		this.candidateExperienceService = candidateExperienceService;
+		this.candidateAbilityService = candidateAbilityService;
+		this.candidateEducationService = candidateEducationService;
+		this.candidateLinkService = candidateLinkService;
+		this.imageService = imageService;
 	}
 
+	
+	
+	
 	@Override
 	public DataResult<Candidate> add(Candidate candidate) {
 		
@@ -132,6 +162,21 @@ public class CandidateManager implements CandidateService {
 	@Override
 	public DataResult<List<Candidate>> getAll() {
 		return new SuccessDataResult<List<Candidate>>(this.candidateDao.findAll(),"İş Arayanlar Listesi başarıyla getirildi.");
+	}
+
+	@Override
+	public DataResult<CurriculumVitaeDto> getByCurriculumVitaeDtoId(int id) {
+		CurriculumVitaeDto cv = new CurriculumVitaeDto();
+		
+		cv.setAbilities(this.candidateAbilityService.getByCandidateId(id).getData());
+		cv.setEducations(this.candidateEducationService.getByCandidate_Id(id).getData());
+		cv.setExperiences(this.candidateExperienceService.getByCandidate_Id(id).getData());
+		cv.setLanguages(this.candidateLanguageService.getByCandidate_Id(id).getData());
+		cv.setLinks(this.candidateLinkService.getByCandidate_Id(id).getData());
+		cv.setImage(this.imageService.getByCandidate_Id(id).getData());
+		cv.setCandidate(this.candidateDao.getOne(id));
+		
+		return new SuccessDataResult<CurriculumVitaeDto>(cv,"CV listelendi.");
 	}
 
 	

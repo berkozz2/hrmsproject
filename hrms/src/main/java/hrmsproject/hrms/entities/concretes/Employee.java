@@ -1,5 +1,7 @@
 package hrmsproject.hrms.entities.concretes;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -28,7 +30,7 @@ public class Employee extends User{
 	@Column(name = "last_name")
 	private String lastName;
 	
-	@OneToMany(mappedBy = "job_advertisement_confirms")
+	@OneToMany(mappedBy = "employee")
 	@JsonIgnore
-	private JobAdvertisementConfirm jobAdvertisementConfirm;
+	private List<JobAdvertisementConfirm> jobAdvertisementConfirms;
 }
