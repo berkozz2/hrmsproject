@@ -1,5 +1,6 @@
 package hrmsproject.hrms.entities.concretes;
 
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,7 +29,6 @@ public class JobAdvertisementConfirm {
 	
 	@Column(name = "is_verified")
 	private boolean isVerified;
-	
 
 	@OneToOne()
 	@JoinColumn(name="job_advertisement_id")

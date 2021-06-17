@@ -32,7 +32,7 @@ public class WorkType {
 	@OneToMany(mappedBy = "workType")
 	private List<JobAdvertisement> jobAdvertisements;
 
-	@OneToMany(mappedBy = "WorkType")
-	private List<JobAdvertisement> jobAdvertisement;
+	/*@OneToMany(mappedBy = "WorkType")
+	private List<JobAdvertisement> jobAdvertisement;*/
 
 }
