@@ -14,6 +14,8 @@ public interface JobAdvertisementDao extends JpaRepository<JobAdvertisement, Int
 	
 	//List<JobAdvertisement> getAll();
 	
+	List<JobAdvertisement> getByEmployer_Id(int employerId);
+	
 	
 	
 }

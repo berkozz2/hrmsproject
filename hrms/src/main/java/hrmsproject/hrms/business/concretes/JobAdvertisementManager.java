@@ -59,6 +59,12 @@ public class JobAdvertisementManager implements JobAdvertisementService {
 		Sort sort = Sort.by(Sort.Direction.DESC,"applicationDeadLine");
 		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.findAll(sort));
 	}
+
+	@Override
+	public DataResult<List<JobAdvertisement>> getByEmployerId(int employerId) {
+		
+		return new SuccessDataResult<List<JobAdvertisement>>(this.jobAdvertisementDao.getByEmployer_Id(employerId));
+	}
 	
 
 }

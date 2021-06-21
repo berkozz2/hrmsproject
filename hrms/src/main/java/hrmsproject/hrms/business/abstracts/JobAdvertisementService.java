@@ -14,6 +14,7 @@ public interface JobAdvertisementService {
 	DataResult<List<JobAdvertisement>> getAll();
 	DataResult<List<JobAdvertisement>> getAllSortedByActive();
 	DataResult<List<JobAdvertisement>> getAllSortedByDate();
+	DataResult<List<JobAdvertisement>> getByEmployerId(int employerId);
 	
 	
 }
