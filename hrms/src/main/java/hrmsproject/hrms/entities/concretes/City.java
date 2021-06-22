@@ -8,6 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -23,9 +25,11 @@ public class City {
 	@Column(name = "id")
 	private int id;
 	
-	@Column(name = "city")
-	private String city;
+	@Column(name = "name")
+	private String name;
+	
 	
 	@OneToMany(mappedBy = "city")
+	@JsonIgnore
 	private List<JobAdvertisement> jobAdvertisement;
 }

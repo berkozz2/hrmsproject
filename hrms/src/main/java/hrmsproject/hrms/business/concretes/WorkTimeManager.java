@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 
 import hrmsproject.hrms.business.abstracts.WorkTimeService;
 import hrmsproject.hrms.core.utilities.results.DataResult;
+import hrmsproject.hrms.core.utilities.results.Result;
 import hrmsproject.hrms.core.utilities.results.SuccessDataResult;
+import hrmsproject.hrms.core.utilities.results.SuccessResult;
 import hrmsproject.hrms.dataAccess.abstracts.WorkTimeDao;
 import hrmsproject.hrms.entities.concretes.WorkTime;
 
@@ -31,9 +33,9 @@ public class WorkTimeManager implements WorkTimeService {
 
 
 	@Override
-	public DataResult<List<WorkTime>> getByJobAdverId(int id) {
-		
-		return new SuccessDataResult<List<WorkTime>>(this.workTimeDao.getByJobAdvertisementId(id));
+	public Result add(WorkTime workTime) {
+		this.workTimeDao.save(workTime);
+		return new SuccessResult(true,"Çalışma zamanı eklendi.");
 	}
 
 

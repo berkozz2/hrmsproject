@@ -11,7 +11,9 @@ import hrmsproject.hrms.entities.concretes.WorkType;
 public interface WorkTypeDao extends JpaRepository<WorkType, Integer> {
 
 
-	List<WorkType> getByJobAdvertisementsId(int id);
+	List<WorkType> getById(int id);
+	
+	WorkType getByTypeName (String typeName);
 	
 }	
 

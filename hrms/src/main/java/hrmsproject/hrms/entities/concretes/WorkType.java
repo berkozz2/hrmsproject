@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -30,9 +32,9 @@ public class WorkType {
 	private String typeName;
 	
 	@OneToMany(mappedBy = "workType")
+	@JsonIgnore
 	private List<JobAdvertisement> jobAdvertisements;
 
-	/*@OneToMany(mappedBy = "WorkType")
-	private List<JobAdvertisement> jobAdvertisement;*/
+	
 
 }
